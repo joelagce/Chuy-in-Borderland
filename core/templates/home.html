@@ -1,436 +1,148 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  
-    <title>Elastic Tab Animation | CodingNepal</title> 
-    <link rel="stylesheet" href="chuy.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </head>
-  <body>
 
 
-    <div class="card1">
-
-    <div class="Koala">
+{% load static %}
 
 
 
-      <div class="search-box">
-        <input type="text" placeholder="Type to search..">
-        <div class="search-icon">
-          <i class="fas fa-search"></i>
-        </div>
-  <div class="cancel-icon">
-          <i class="fas fa-times"></i>
-        </div>
-  <div class="search-data">
+{% block content %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="h.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+
+    <div class="cont">
+    <div class="nav">
+        <nav>
+          <input type="radio" name="tab" id="home" checked>
+          <input type="radio" name="tab" id="inbox">
+          <input type="radio" name="tab" id="contact">
+          <input type="radio" name="tab" id="heart">
+          <input type="radio" name="tab" id="about">
+          <label for="home" class="home"><a href="#"><i class="fas fa-home"></i>Inicio</a></label>
+          <label for="inbox" class="inbox"><a href="#"><i class="far fa-comment"></i>Tienda</a></label>
+          <label for="about" class="about"><a href="#"><i class="far fa-cart"></i>Carrito</a></label>
+
+          <div class="tab">
+
   </div>
-  </div>
-  <script>
-        const searchBox = document.querySelector(".search-box");
-        const searchBtn = document.querySelector(".search-icon");
-        const cancelBtn = document.querySelector(".cancel-icon");
-        const searchInput = document.querySelector("input");
-        const searchData = document.querySelector(".search-data");
-        searchBtn.onclick =()=>{
-          searchBox.classList.add("active");
-          searchBtn.classList.add("active");
-          searchInput.classList.add("active");
-          cancelBtn.classList.add("active");
-          searchInput.focus();
-          if(searchInput.value != ""){
-            var values = searchInput.value;
-            searchData.classList.remove("active");
-            searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
-          }else{
-            searchData.textContent = "";
-          }
-        }
-        cancelBtn.onclick =()=>{
-          searchBox.classList.remove("active");
-          searchBtn.classList.remove("active");
-          searchInput.classList.remove("active");
-          cancelBtn.classList.remove("active");
-          searchData.classList.toggle("active");
-          searchInput.value = "";
-        }
-      </script>
-                    
-    <div class="wrapper1">
+     
 
-            <nav>
-                <input type="radio" name="tab" id="home" checked>
-                <input type="radio" name="tab" id="inbox">
-                <input type="radio" name="tab" id="contact">
-                <input type="radio" name="tab" id="heart">
-                <input type="radio" name="tab" id="about">
-                <label for="home" class="home"><a href="#"><i class="fas fa-home"></i>Inicio</a></label>
-                <label for="inbox" class="inbox"><a href="#"><i class="far fa-comment"></i>Inbox</a></label>
-                <label for="contact" class="contact"><a href="#"><i class="far fa-envelope"></i>Contactanos</a></label>
-                <label for="heart" class="heart"><a href="#"><i class="far fa-heart"></i>Favoritos</a></label>
-                <label for="about" class="about"><a href="#"><i class="far fa-user"></i>Conocenos</a></label>
-                <div class="tab"> </div>
+  </nav>
+      </div>
+    </div>
+   
+    <div class="contenedor">
+    <div class="homes"> 
+        <div class="Encabezado">
+            <h2>Chuy in Borderland</h2>
 
-            </nav>
-
-       </div>
-
-       </div>
+        </div>
 
 
 
-       <div class="contenedor head">
-        <h1 class="titulo">Chuy in Borderland</h1>
-        <p class="copy">Encuentra los mejores videojuegos para disfrutar de un gran momento donde todo puede ser realidad</p>
-        <p>
 
-        </p>
-       </div>
 
-      
-      <main>
-        <section class="services contenedor" id="serv">
-          
-          <h2 class="subtitulo">Videojuegos</h2>
-          <div class="contenedor-servicio">
-            <div class="cheklist-servicio">
-              <div class="service">
-                <h3 class="n-service"><spam class="number"></spam>Agregados recientemente</h3>
-                
+        <div class="titulo1">
+          <h2>Encuentra los videojuegos para ese gran momento donde todo puede ser realidad</h2>
+
+      </div>
+
+
+
+        <div class="buscador">
+        <div class="search-box">
+            <input type="text" placeholder="Type to search..">
+            <div class="search-icon">
+              <img src="{% static 'search.png' %}" alt="My image">
+            </div>
+      <div class="cancel-icon">
+              <i class="fas fa-times"></i>
+            </div>
+      <div class="search-data">
+      </div>
+      </div>
+    </div>
+    
+
+
+
+<div class="lo">
+        <div class="wrapper">
+          <div class="carousel owl-carousel">
+            {% for product in products %}
+          <div class="card">
+            <img src="{{ product.image.url }}" alt="">
+            <div class="content">
+              <div class="row">
+                <div class="details">
+                  <span>{{product.title}}</span>
+                  
+                </div>
+                <div class="price">${{product.price}}</div>
               </div>
-           </div>
+              <div class="buttons">
+                <button>Compra Ahora</button>
+                <button class="cart-btn">Agregar al Carrito</button>
+              </div>
+            </div>
           </div>
-      </main>
-   
+          {% endfor %}
+
+        
+         
+          
+
+
+          <!-- <script src="script.js"></script> -->
+          
         
 
-            <p>
-                <div class="wrapper">
-                    <div class="cart-nav">
-                      <div class="icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Cart</span>
-                      </div>
-                      <div class="item-count">0</div>
-                    </div>
-                    <div class="card">
-                      <img src="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/2871720.jpg" alt="">
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Metro Exodus</span>
-                            <p>Shotter</p>
-                          </div>
-                          <div class="price">$500</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img src="https://resources.claroshop.com/imagenes-sanborns-ii/1200/47875881983.jpg" alt="">
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Crash</span>
-                            <p>10% de descuento</p>
-                          </div>
-                          <div class="price">$650</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img src="https://images.lukiegames.com/t_300e2/assets/images/Xbox-360/x360_kameo_elements_of_power-110214.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Kameo</span>
-                            <p>Aventura</p>
-                          </div>
-                          <div class="price">$300</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/51btOcW7LzL._AC_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>The Legend of Zelda: Breath of the Wild</span>
-                            <p>Aventura</p>
-                          </div>
-                          <div class="price">$700</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/81LfSq6NlJL._AC_SX385_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Little Witch Academia Chamber of Time</span>
-                            <p>Magia</p>
-                          </div>
-                          <div class="price">$354</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/81MGUkM3L4L._SL1500_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Hatsune Miku: Project DIVA</span>
-                            <p>Baile</p>
-                          </div>
-                          <div class="price">$550</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/81Bzm37TIaL._SX522_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Ghost of Tsushima</span>
-                            <p>Guerra</p>
-                          </div>
-                          <div class="price">$720</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/2873414.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Devil May Cry 5</span>
-                            <p>Aventura</p>
-                          </div>
-                          <div class="price">$430</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/61o3w9WDjDL._AC_SX385_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Mortal Kombat 11</span>
-                            <p>Mortal</p>
-                          </div>
-                          <div class="price">$370</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://gameplanet-53f8.kxcdn.com/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/d/o/doom-eternal-one_1.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Doom Eternal</span>
-                            <p>Guerra</p>
-                          </div>
-                          <div class="price">$300</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://images-na.ssl-images-amazon.com/images/I/71jUlLTTl3L._AC_SX425_.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>Halo 5</span>
-                            <p>Combate</p>
-                          </div>
-                          <div class="price">$300</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                    <div class="card">
-                      <img src="https://ss423.liverpool.com.mx/xl/1085506796.jpg" alt=""> 
-                      <div class="content">
-                        <div class="row">
-                          <div class="details">
-                            <span>The Last Of Us</span>
-                            <p>Supervivencia</p>
-                          </div>
-                          <div class="price">$520</div>
-                        </div>
-                        <div class="buttons">
-                          <button>Comprar Ahora</button>
-                          <button class="cart-btn">Agregar al Carrito</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                   
 
-             </div>
-      </p>
-
-
-
-
-       
-
-
-
-        <div class="blog-card">
-          <input type="radio" name="select" id="tap-1" checked>
-          <input type="radio" name="select" id="tap-2">
-          <input type="radio" name="select" id="tap-3">
-          <input type="checkbox" id="imgTap">
-          <div class="sliders">
-            <label for="tap-1" class="tap tap-1"></label>
-            <label for="tap-2" class="tap tap-2"></label>
-            <label for="tap-3" class="tap tap-3"></label>
-          </div>
-    <div class="inner-part">
-            <label for="imgTap" class="img">
-              <img class="img-1" src="https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/711719506089.jpg">
-            </label>
-            <div class="content content-1">
-              <span>26 Marzo 2021</span>
-              <div class="title">
-    Lo más Nuevo</div>
-    <div class="text">
-      ¡Encuentra los videojuegos más destacados de esta semana!</div>
-    <button>Leer más</button>
-            </div>
     </div>
-    <div class="inner-part">
-            <label for="imgTap" class="img">
-              <img class="img-2" src="https://images-na.ssl-images-amazon.com/images/I/81Ylw%2BiRUKL._AC_SL1500_.jpg">
-            </label>
-            <div class="content content-2">
-              <span>26 Marzo 2021</span>
-              <div class="title">
-       ¡Descuento!</div>
-    <div class="text">
-      Usa el código "Chuy" para un 10% de descuento en tus compras.</div>
-    <button>Leer más</button>
-            </div>
-    </div>
-    <div class="inner-part">
-            <label for="imgTap" class="img">
-              <img class="img-3" src="https://phantom.pe/pub/media/catalog/product/cache/71a032b60710d907b279b6023a79a12b/r/e/red-dead-redemption-ii-ps4_1_1.jpg">
-            </label>
-            <div class="content content-3">
-              <span>26 Marzo 2021</span>
-              <div class="title">
-     Estamos a tu Disposición</div>
-    <div class="text">
-      Si buscas algo en específico ¡Contactanos!</div>
-    <button>Leer más</button>
-            </div>
-    </div>
-    </div>
+  </div>
+  </div>
+</div>
+
+
 
 
 
     
 
-<footer id="contacto">
-  <div class="contenedor footer-content">
-      <div class="contact-us">
-          <h2 class="brand">#Chuy_In_Borderland</h2>
-          <p>Los mejores videojuegos a los mejores precios.</p>
-      </div>
-      <div class="social-media">
-          <a href="./" class="social-media-icon">
-              <i class='bx bxl-facebook'></i>
-          </a>
-
-          <a href="./" class="social-media-icon">
-              <i class='bx bxl-twitter'></i>
-          </a>
-
-          <a href="./" class="social-media-icon">
-              <i class='bx bxl-instagram'></i>
-          </a>
-        
-        
-      </div>
-  </div>
-  <div class="line"></div>
-</footer>
 
 
 
+  <script>
+    $(".carousel").owlCarousel({
+      
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsive: {
+        0:{
+          items:1,
+          nav: false
+        },
+        600:{
+          items:2,
+          nav: false
+        },
+        1000:{
+          items:3,
+          nav: false
+        }
+      }
+    });
+  </script>
 
-
-   </section>
-  </div>
-
-    
-   
-
-
-
-</body>
-</html>
+ 
+{% endblock %}

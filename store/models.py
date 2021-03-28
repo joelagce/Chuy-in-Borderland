@@ -117,7 +117,7 @@ class Product(models.Model):
     '''def save(self, *args, **kwargs): 
         self.thumbnail = self.make_thumbnail(self.image) 
 
-        super().save(*args, **kwargs)'''
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return '/%s/%s/' % (self.category.slug, self.slug)
@@ -144,7 +144,7 @@ class Product(models.Model):
 
         thumbnail = File(thumb_io, name=image.name) 
 
-        return thumbnail
+        return thumbnail'''
 
         
 class ProductImage(models.Model):
