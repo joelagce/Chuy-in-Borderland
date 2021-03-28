@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="h.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 </head>
 <body>
     <div class="cont">
@@ -51,7 +54,10 @@
         <div class="search-box">
             <input type="text" placeholder="Type to search..">
             <div class="search-icon">
-              <i class="fas fa-search"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="48" height="48"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M95.04232,106.54818l17.77669,17.77669c-2.7155,5.17904 -2.99544,10.33008 -0.13998,13.18555l32.44597,32.44597c4.08724,4.08724 12.98958,1.84765 19.82031,-5.01107c6.85872,-6.85872 9.09831,-15.73307 5.01107,-19.82031l-32.41797,-32.44597c-2.88346,-2.85547 -8.0345,-2.57552 -13.21354,0.11198l-17.77669,-17.74869zM60.91667,0c-33.64974,0 -60.91667,27.26693 -60.91667,60.91667c0,33.64974 27.26693,60.91667 60.91667,60.91667c33.64974,0 60.91667,-27.26692 60.91667,-60.91667c0,-33.64974 -27.26692,-60.91667 -60.91667,-60.91667zM60.91667,107.5c-25.72722,0 -46.58333,-20.85612 -46.58333,-46.58333c0,-25.72722 20.85612,-46.58333 46.58333,-46.58333c25.72722,0 46.58333,20.85612 46.58333,46.58333c0,25.72722 -20.85612,46.58333 -46.58333,46.58333z"></path></g></g></svg>
             </div>
       <div class="cancel-icon">
               <i class="fas fa-times"></i>
@@ -64,10 +70,43 @@
 
 
 
-
+<div class="lo">
         <div class="wrapper">
+          <div class="carousel owl-carousel">
+          <div class="card">
+            <img src="https://image.api.playstation.com/vulcan/img/rnd/202101/1315/1zfTY2JW41HdDTGJC00Go4nk.png" alt="">
+            <div class="content">
+              <div class="row">
+                <div class="details">
+                  <span>Headphone</span>
+                  <p>Premium headphone</p>
+                </div>
+                <div class="price">$30</div>
+              </div>
+              <div class="buttons">
+                <button>Compra Ahora</button>
+                <button class="cart-btn">Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
           <div class="card">
             <img src="https://images-na.ssl-images-amazon.com/images/I/81MGUkM3L4L._SL1500_.jpg" alt="">
+            <div class="content">
+              <div class="row">
+                <div class="details">
+                  <span>Headphone</span>
+                  <p>Premium headphone</p>
+                </div>
+                <div class="price">$30</div>
+              </div>
+              <div class="buttons">
+                <button>Compra Ahora</button>
+                <button class="cart-btn">Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://tecnovery.com/wp-content/uploads/2020/07/nba_2k21-5198703.jpg" alt="">
             <div class="content">
               <div class="row">
                 <div class="details">
@@ -106,8 +145,9 @@
 
 
     </div>
-
   </div>
+  </div>
+</div>
 
 
 
@@ -118,6 +158,29 @@
 
 
 
+  <script>
+    $(".carousel").owlCarousel({
+      margin: 20,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsive: {
+        0:{
+          items:1,
+          nav: false
+        },
+        600:{
+          items:2,
+          nav: false
+        },
+        1000:{
+          items:3,
+          nav: false
+        }
+      }
+    });
+  </script>
 
 
 </body>
