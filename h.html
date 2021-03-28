@@ -29,11 +29,24 @@
       </div>
     </div>
    
-    <div class="homes">
+    <div class="contenedor">
+    <div class="homes"> 
         <div class="Encabezado">
             <h2>Chuy in Borderland</h2>
 
         </div>
+
+
+
+
+
+        <div class="titulo1">
+          <h2>Encuentra los videojuegos para ese gran momento donde todo puede ser realidad</h2>
+
+      </div>
+
+
+
         <div class="buscador">
         <div class="search-box">
             <input type="text" placeholder="Type to search..">
@@ -47,47 +60,65 @@
       </div>
       </div>
     </div>
-      <script>
-            const searchBox = document.querySelector(".search-box");
-            const searchBtn = document.querySelector(".search-icon");
-            const cancelBtn = document.querySelector(".cancel-icon");
-            const searchInput = document.querySelector("input");
-            const searchData = document.querySelector(".search-data");
-            searchBtn.onclick =()=>{
-              searchBox.classList.add("active");
-              searchBtn.classList.add("active");
-              searchInput.classList.add("active");
-              cancelBtn.classList.add("active");
-              searchInput.focus();
-              if(searchInput.value != ""){
-                var values = searchInput.value;
-                searchData.classList.remove("active");
-                searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
-              }else{
-                searchData.textContent = "";
-              }
-            }
-            cancelBtn.onclick =()=>{
-              searchBox.classList.remove("active");
-              searchBtn.classList.remove("active");
-              searchInput.classList.remove("active");
-              cancelBtn.classList.remove("active");
-              searchData.classList.toggle("active");
-              searchInput.value = "";
-            }
-          </script>
+    
 
-      
 
-        <div class="titulo1">
-            <h2>Encuentra los videojuegos para ese gran momento donde todo puede ser realidad</h2>
 
-        </div>
+
+        <div class="wrapper">
+          <div class="card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/81MGUkM3L4L._SL1500_.jpg" alt="">
+            <div class="content">
+              <div class="row">
+                <div class="details">
+                  <span>Headphone</span>
+                  <p>Premium headphone</p>
+                </div>
+                <div class="price">$30</div>
+              </div>
+              <div class="buttons">
+                <button>Compra Ahora</button>
+                <button class="cart-btn">Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+              <img src="https://ss423.liverpool.com.mx/xl/1085506796.jpg" alt="">
+            <div class="content">
+              <div class="row">
+                <div class="details">
+                  <span>Headphone</span>
+                  <p>Premium headphone</p>
+                </div>
+                <div class="price">$30</div>
+              </div>
+              <div class="buttons">
+                <button>Compra Ahora</button>
+                <button class="cart-btn">Agregar al Carrito</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- <script src="script.js"></script> -->
+          
         
-        
-        
+
 
     </div>
+
+  </div>
+
+
+
+
+
+    
+
+
+
+
+
 
 </body>
 </html>
