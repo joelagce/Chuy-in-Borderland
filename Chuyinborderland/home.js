@@ -88,18 +88,6 @@ var productapp = new Vue({
             this.errors.push('Email is empty');
         }
 
-        if (this.address === '') {
-            this.errors.push('Address is empty');
-        }
-
-        if (this.zipcode === '') {
-            this.errors.push('Zip code is empty');
-        }
-
-        if (this.place === '') {
-            this.errors.push('Place is empty');
-        }
-
         if (this.phone === '') {
             this.errors.push('Phone is empty');
         }
@@ -111,9 +99,6 @@ var productapp = new Vue({
             'first_name': this.first_name,
             'last_name': this.last_name,
             'email': this.email,
-            'address': this.address,
-            'zipcode': this.zipcode,
-            'place': this.place,
             'gateway': gateway
         };
 
